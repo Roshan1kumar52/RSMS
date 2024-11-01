@@ -1,0 +1,49 @@
+<style>
+    h2 {
+        font-size: 24px; /* Adjust font size */
+        color: #333; /* Dark gray color */
+        margin-bottom: 20px; /* Space below the heading */
+        text-align: center; /* Center align the text */
+    }
+
+    form {
+        display: flex; /* Use flexbox for layout */
+        justify-content: center; /* Center align form items */
+        margin-bottom: 20px; /* Space below the form */
+    }
+
+    button {
+        background-color: #e74c3c; /* Red background */
+        color: white; /* White text color */
+        border: none; /* No border */
+        padding: 10px 20px; /* Padding around the text */
+        font-size: 16px; /* Font size */
+        cursor: pointer; /* Pointer cursor on hover */
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.3s; /* Smooth transition */
+        margin: 0 10px; /* Space between buttons */
+    }
+
+    button:hover {
+        background-color: #c0392b; /* Darker red on hover */
+    }
+
+    .cancel-button {
+        background-color: #3498db; /* Blue background for cancel button */
+    }
+
+    .cancel-button:hover {
+        background-color: #2980b9; /* Darker blue on hover */
+    }
+</style>
+
+<h2>Are you sure you want to delete the student {{ studs }}?</h2>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Yes, delete</button>
+    <a href="{% url 'delete_stud' %}">
+        <button type="button" class="cancel-button">Cancel</button>
+    </a>
+</form>
+
+

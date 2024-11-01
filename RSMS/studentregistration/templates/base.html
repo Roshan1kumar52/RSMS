@@ -1,0 +1,121 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student Enrolment System</title>
+  <link rel="stylesheet" href="">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: "Montserrat", sans-serif;
+      }
+
+      .body-text {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 250px;
+      }
+
+      nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          min-height: 8vh;
+          background-color: teal;
+      }
+
+      .heading {
+          color: white;
+          text-transform: uppercase;
+          letter-spacing: 5px;
+          font-size: 20px;
+      }
+
+      .nav-links {
+          display: flex;
+          gap: 20px; /* Better spacing between links */
+      }
+
+      .nav-links li {
+          list-style: none;
+      }
+
+      .nav-links a {
+          color: white;
+          text-decoration: none;
+          letter-spacing: 1px; /* Adjusted for clarity */
+          font-weight: bold;
+          font-size: 14px;
+          padding: 14px 16px;
+          transition: background-color 0.3s ease; /* Smooth hover effect */
+      }
+
+      .nav-links a:hover:not(.active) {
+          background-color: lightseagreen;
+      }
+
+      .nav-links li a.active {
+          background-color: #4caf50;
+      }
+
+      .container {
+          display: flex;
+          flex-direction: column;
+          width: 25vw;
+      }
+
+      h1, p {
+          text-align: center;
+      }
+
+      table {
+          border-collapse: collapse;
+          width: 100%;
+      }
+
+      th, td {
+          border: 2px solid green;
+          padding: 15px;
+          text-align: left; /* Better alignment for table content */
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+          nav {
+              flex-direction: column;
+              align-items: flex-start;
+          }
+          .nav-links {
+              width: 100%;
+              justify-content: space-around;
+              flex-direction: row; /* Adjust for mobile */
+          }
+          .nav-links a {
+              padding: 10px; /* Adjust padding for smaller screens */
+          }
+      }
+  </style>
+</head>
+<body>
+  <nav>
+      <div class="heading">
+          <h4>Rungta  Student Managment System</h4>
+      </div>
+      <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a class="active" href="/reg">Registrations</a></li>
+          <li><a href="/all_stu">Registered</a></li>
+          <li><a href="/search_stu">Search</a></li>
+          <li><a href="/delete_stud">Delete</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+      </ul>
+  </nav>
+</body>
